@@ -9,7 +9,7 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 from datetime import time, datetime,date
-from fastapi import FastAPI
+#from fastapi import FastAPI
 from scipy.optimize import newton
 import math
 import time

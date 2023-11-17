@@ -1,5 +1,0 @@
-scipy
-keras
-altair
-timec
-sklearn

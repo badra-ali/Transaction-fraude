@@ -129,7 +129,7 @@ if user_name != '':
                 st.write('\n')"""
 
 st.write("BAMBA")
-
+col1, col2, col3 = st.columns(3)
 with col1:
     st.image('Marche-Financier.png',caption='Les Valeurs du Marché')
 with col2:

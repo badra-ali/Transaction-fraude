@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 #import matplotlib.pyplot as plt
-import seaborn as sns
+#import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
@@ -31,7 +31,7 @@ if uploaded_file is not None:
     st.write(df.head())
     st.write(df.info())
     
-    col1, col2, col3 = st.columns(3)
+    """col1, col2, col3 = st.columns(3)
     with col1:
             st.subheader('Rapartition des AO par Pays')
             type_handicap = df['Pays']
@@ -73,7 +73,7 @@ if uploaded_file is not None:
             count_handicap_types.plot(kind='pie', autopct='%1.1f%%', startangle=90, colors=['lightblue', 'lightcoral', 'lightgreen', 'lightyellow', 'lightsalmon'])
             plt.title('Rapartition des AO par Statut')
             plt.ylabel('')  # Supprimer l'étiquette y
-            st.pyplot(fig)
+            st.pyplot(fig)"""
     
     
     st.write("BAMBA")

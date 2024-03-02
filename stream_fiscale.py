@@ -1,18 +1,18 @@
-import numpy as np
-import altair as alt
+#import numpy as np
+#import altair as alt
 import streamlit as st
-from datetime import time, datetime,date
+#from datetime import time, datetime,date
 #from fastapi import FastAPI
-from scipy.optimize import newton
-import math
-import time
-from keras.models import load_model
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from keras.models import Model
-from keras.layers import Input, Dense
+#from scipy.optimize import newton
+#import math
+#import time
+#from keras.models import load_model
+#import pandas as pd
+#import matplotlib.pyplot as plt
+#from sklearn.model_selection import train_test_split
+#from sklearn.preprocessing import StandardScaler
+#from keras.models import Model
+#from keras.layers import Input, Dense
 
 """class Traitement_data:
     def __init__(self,data_tansaction):

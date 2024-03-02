@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler
 from keras.models import Model
 from keras.layers import Input, Dense
 
-class Traitement_data:
+"""class Traitement_data:
     def __init__(self,data_tansaction):
         
         self.data_tansaction=data_tansaction
@@ -126,11 +126,17 @@ if user_name != '':
             for name, group in Xgrouped:
                 st.write("Compte", {name})
                 st.write(group)
-                st.write('\n')
+                st.write('\n')"""
 
+st.write("BAMBA")
 
-
-
+with col1:
+    st.image('Marche-Financier.png',caption='Les Valeurs du Marché')
+with col2:
+    st.image('Marche-Financier.png',caption='Les Valeurs du Marché')
+    
+with col3:
+    st.image('Marche-Financier.png',caption='Les Valeurs du Marché')
 
 
 

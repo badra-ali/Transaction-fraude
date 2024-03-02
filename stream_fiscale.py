@@ -17,21 +17,21 @@ def load_data(uploaded_file):
 #st.image('Logo_bnetd_transparence.png',caption=' ')
 
 
-uploaded_file=st.file_uploader("Fichier Appel d'Offre",type=["xlsx","xls","csv"])
-if uploaded_file is not None:
-    #df = load_data(uploaded_file)
+#uploaded_file=st.file_uploader("Fichier Appel d'Offre",type=["xlsx","xls","csv"])
+#if uploaded_file is not None:
+#df = load_data(uploaded_file)
     
-    df=pd.read_excel("Base_de_donnee_Banque_Mondiale.xlsx")
+df=pd.read_excel("Base_de_donnee_Banque_Mondiale.xlsx")
     
-    # Titre de l'application
-    st.title('Analyse des appels d offres de 2023')
+# Titre de l'application
+st.title('Analyse des appels d offres de 2023')
     
-    # Afficher un résumé des données
-    st.subheader('Résumé des données')
-    st.write(df.head())
-    st.write(df.info())
+# Afficher un résumé des données
+st.subheader('Résumé des données')
+st.write(df.head())
+st.write(df.info())
     
-    """col1, col2, col3 = st.columns(3)
+"""col1, col2, col3 = st.columns(3)
     with col1:
             st.subheader('Rapartition des AO par Pays')
             type_handicap = df['Pays']
@@ -76,7 +76,7 @@ if uploaded_file is not None:
             st.pyplot(fig)"""
     
     
-    st.write("BAMBA")
+st.write("BAMBA")
 
 
 

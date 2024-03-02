@@ -19,9 +19,9 @@ def load_data(uploaded_file):
 
 uploaded_file=st.file_uploader("Fichier Appel d'Offre",type=["xlsx","xls","csv"])
 if uploaded_file is not None:
-    df = load_data(uploaded_file)
+    #df = load_data(uploaded_file)
     
-    #df=pd.read_excel("Base_de_donnee_Banque_Mondiale.xlsx")
+    df=pd.read_excel("Base_de_donnee_Banque_Mondiale.xlsx")
     
     # Titre de l'application
     st.title('Analyse des appels d offres de 2023')

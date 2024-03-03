@@ -20,8 +20,29 @@ def load_data(uploaded_file):
 #uploaded_file=st.file_uploader("Fichier Appel d'Offre",type=["xlsx","xls","csv"])
 #if uploaded_file is not None:
 #df = load_data(uploaded_file)
+
+import pandas as pd
+import numpy as np
+
+# Définir la taille de la base de données
+nb_lignes = 1000
+
+# Générer des données aléatoires pour chaque colonne
+noms = ['Alice', 'Bob', 'Charlie', 'David', 'Eve']
+ages = np.random.randint(18, 70, size=nb_lignes)
+salaires = np.random.randint(20000, 100000, size=nb_lignes)
+ville = np.random.choice(['Paris', 'Londres', 'New York', 'Tokyo'], size=nb_lignes)
+
+# Créer un DataFrame Pandas avec les données générées
+data = {
+    'Nom': np.random.choice(noms, size=nb_lignes),
+    'Age': ages,
+    'Salaire': salaires,
+    'Ville': ville
+}
+df = pd.DataFrame(data)
     
-df=pd.read_excel("C:/Users/alidjou.bamba/Transaction-fraude/Base_de_donnee_Banque_Mondiale.xlsx")
+#df=pd.read_excel("C:/Users/alidjou.bamba/Transaction-fraude/Base_de_donnee_Banque_Mondiale.xlsx")
     
 # Titre de l'application
 st.title('Analyse des appels d offres de 2023')

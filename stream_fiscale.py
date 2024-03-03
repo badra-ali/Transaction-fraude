@@ -21,6 +21,111 @@ def load_data(uploaded_file):
 #if uploaded_file is not None:
 #df = load_data(uploaded_file)
 
+import schedule
+import time
+import requests
+from bs4 import BeautifulSoup
+
+def retrieve_data():
+    data_pays=[]
+    data_Entite_contractante=[]
+    data_pays_titre=[]
+    data_projet=[]
+    data_lancement=[]
+    data_statut=[]
+    data_limite=[]
+    data_NAO=[]
+    stock_price_pays=[]
+    stock_price_Entite_contractante=[]
+    stock_price_projet=[]
+    stock_price_lancement=[]
+    stock_price_statut=[]
+    stock_price_limite=[]
+    stock_price_NAO=[]
+    for i in range(30):
+        url = f"https://devbusiness.un.org/site-search?page={i}"
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, "html.parser")
+
+        price_element_pays = soup.findAll("span",class_="card__countries-country")
+        if price_element_pays:
+            for element in price_element_pays:
+                stock_price_pays.append(element.text)
+
+        price_element_Entite_contractante = soup.findAll("span",class_="card__institution")
+        if price_element_Entite_contractante:
+            for element in price_element_Entite_contractante:
+                stock_price_Entite_contractante.append(element.text)
+
+        price_element_titre = soup.findAll("h3",class_="heading card-search-result__title")
+        if price_element_titre:
+            stock_price_titre=[]
+            for element in price_element_titre:
+                stock_price_titre.append(element.text)
+
+        price_element_projet = soup.findAll("div",class_="col-sm-6 card__content-wrapper")
+        if price_element_projet:
+            for element in price_element_projet:
+                stock_price_projet.append(element.text)
+
+        price_element_lancement = soup.findAll("div",class_="col-sm-2 card__date-posted")
+        if price_element_lancement:
+            for element in price_element_lancement:
+                stock_price_lancement.append(element.text)
+
+        price_element_statut = soup.findAll("div",class_="col-sm-2 card__status")
+        if price_element_statut:
+            for element in price_element_statut:
+                stock_price_statut.append(element.text)
+
+        price_element_limite = soup.findAll("div",class_="col-sm-6")
+        if price_element_limite:
+            for element in price_element_limite:
+                stock_price_limite.append(element.text)
+        else:
+            stock_price_limite.append(0)
+
+        price_element_NAO = soup.findAll("div",class_="col-sm-2 card__db-ref")
+        if price_element_NAO:
+            for element in price_element_NAO:
+                stock_price_NAO.append(element.text+"\n\n"+str(i))
+
+    data_pays.append(stock_price_pays)
+    data_Entite_contractante.append(stock_price_Entite_contractante)
+    data_pays_titre.append(stock_price_titre)
+    data_lancement.append(stock_price_lancement)
+    data_statut.append(stock_price_statut)
+    data_limite.append(stock_price_limite)
+    data_NAO.append(stock_price_NAO)
+
+    data_pays=pd.DataFrame(stock_price_pays)
+    data_Entite_contractante=pd.DataFrame(stock_price_Entite_contractante)
+    data_pays_titre=pd.DataFrame(stock_price_titre)
+    data_projet=pd.DataFrame(stock_price_projet)
+    data_lancement=pd.DataFrame(stock_price_lancement)
+    data_statut=pd.DataFrame(stock_price_statut)
+    data_limite=pd.DataFrame(stock_price_limite)
+    data_NAO=pd.DataFrame(stock_price_NAO)
+
+    data_NAO.to_excel("Data_NAO.xlsx")
+    data_projet.to_excel("data_projet.xlsx")
+    data_pays.to_excel("data_pays.xlsx")
+    data_Entite_contractante.to_excel("data_Entite_contractante.xlsx")
+    data_pays_titre.to_excel("data_pays_titre.xlsx")
+    data_limite.to_excel("data_limite.xlsx")
+    data_statut.to_excel("data_statut.xlsx")
+    data_lancement.to_excel("data_lancement.xlsx")
+
+    print("ok ok")
+# Planification de l'exécution toutes les heures
+schedule.every(3).minutes.do(lambda: retrieve_data())
+print("ok ok ok")
+#data_pays,data_Entite_contractante,data_pays_titre,data_lancement,data_statut,data_limite,data_NAO=retrieve_data()
+# Boucle d'exécution continue
+while True:
+      schedule.run_pending()
+      time.sleep(1)
+
 import pandas as pd
 import numpy as np
 

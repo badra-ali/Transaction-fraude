@@ -21,8 +21,8 @@ def load_data(uploaded_file):
 #if uploaded_file is not None:
 #df = load_data(uploaded_file)
 
-import schedule
-import time
+#import schedule
+#import time
 import requests
 from bs4 import BeautifulSoup
 
@@ -116,10 +116,11 @@ def retrieve_data():
     data_statut.to_excel("data_statut.xlsx")
     data_lancement.to_excel("data_lancement.xlsx")
 
-    print("ok ok")
+    st.write("ok ok")
 # Planification de l'exécution toutes les heures
-schedule.every(3).minutes.do(lambda: retrieve_data())
-print("ok ok ok")
+#schedule.every(3).minutes.do(lambda: retrieve_data())
+retrieve_data()
+st.write("ok ok ok")
 #data_pays,data_Entite_contractante,data_pays_titre,data_lancement,data_statut,data_limite,data_NAO=retrieve_data()
 # Boucle d'exécution continue
 while True:

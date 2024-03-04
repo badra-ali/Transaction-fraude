@@ -11,10 +11,10 @@ import numpy as np
 #from sklearn.metrics import mean_squared_error
 
 # Charger les donnéesst.cache_data
-@st.cache_data
+"""@st.cache_data
 def load_data(uploaded_file):
     df=pd.read_excel(uploaded_file)
-    return df
+    return df"""
     
 
 #st.image('Logo_bnetd_transparence.png',caption=' ')

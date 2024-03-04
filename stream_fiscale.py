@@ -44,9 +44,9 @@ data = {
     'Salaire': salaires,
     'Ville': ville
 }
-#df = pd.DataFrame(data)
+df = pd.DataFrame(data)
     
-df=pd.read_excel("https://raw.githubusercontent.com")
+#df=pd.read_excel("https://raw.githubusercontent.com")
     
 # Titre de l'application
 st.title('Analyse des appels d offres de 2023')

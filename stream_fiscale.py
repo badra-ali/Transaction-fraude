@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#import requests
+import requests
 #from bs4 import BeautifulSoup
 #import schedule
 #import matplotlib.pyplot as plt
